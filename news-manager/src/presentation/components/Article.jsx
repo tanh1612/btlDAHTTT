@@ -14,7 +14,7 @@ const Article = () => {
 
   return (
     <>
-      <div className="article">
+      <div className="article mt-5">
         <div className="container py-5">
           <div className="row">
             <div className="col-md-6">

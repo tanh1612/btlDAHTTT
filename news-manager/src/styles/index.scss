@@ -8,6 +8,9 @@ $primary-white: #d9d9d9;
 $primary-color: #5e0a0a;
 $secondary-color: #a19191;
 $primary-black: #000000;
+$color-orange: #D46018;
+$color-green: #3A693C;
+$color-purple: #882D71;
 
 body {
   font-family: $primary-font;
@@ -198,7 +201,136 @@ header {
 }
 
 
+.layout-admin{
+  .sider{
+    background-color: $primary-black;
+    height: 100%;
+    padding: 10px 20px;
 
+    .sider-header{
+      padding: 10px 20px;
+      img{
+        
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        aspect-ratio: 16/9;
+      }
+      .admin{
+        
+        width: 100px;
+        margin: 10px auto;
+        display: flex;
+        height: 28px;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-white;
+        gap: 10px;
+        cursor: pointer;
+        .icon-admin{
+          color: $primary-black;
+        }
+        span{
+          color: $primary-black;
+
+        }
+      }
+
+    }
+    .sider-content{
+      height: 200px;
+      max-height: 500px;
+      margin: 20px 0;
+      ul{
+        list-style-type: none;
+        padding: 0;
+        text-align: start;
+        width: 100%;
+        height: 100%;
+        li{
+          background-color: #5e0a0a;
+          height: 40px;
+          margin: 10px 0;
+          padding: 10px 15px;
+          border-radius: 5px;
+          a{
+          
+            text-decoration: none;
+            color: white;
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  .content{
+    width: 100%;
+    .content-header{
+      width: 100%;
+      box-shadow: var(--bs-box-shadow) !important;
+      height: 100%;
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        padding-left: 10px;
+        font-weight: 700;
+      }
+
+    }
+    .main-content{
+      margin: 30px 0;
+      padding: 0px 15px;
+      .statistic-article{
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        .ant-card{
+          background-color: $color-orange;
+          .ant-card-body{
+                  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            
+            .icon{
+                      
+              font-size: 38px;
+              color: white;
+  
+            }
+            .information-article{
+              span{
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+                align-items: start;
+                color: white;
+                font-weight: 700;
+              }
+              span:nth-child(2){
+                font-size: 28px;
+
+              }
+            }
+          }
+        }
+        .ant-card:nth-child(2){
+          background-color: $color-green;
+
+        }
+        .ant-card:nth-child(3){
+          background-color: $color-purple;
+
+        }
+        
+        
+        
+      }
+    }
+  }
+
+}
 
 
 // footer
