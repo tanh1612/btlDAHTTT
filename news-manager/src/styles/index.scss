@@ -120,6 +120,87 @@ header {
   }
 }
 
+// auth 
+.card-modal{
+  
+    width: 80%;
+    height: 400px;
+    max-height: 500px;
+    margin: 20px auto;
+    background-color: #a19191;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 100rem;
+    z-index: 999;
+
+    .modal-content {
+        position: relative;
+
+        span{
+
+          margin: 20px auto;
+          color: $primary-color;
+          font-size: 28px;
+          font-weight: 500;
+          
+        }
+        form{
+          
+          margin: 20px auto;
+          width: 60%;
+          
+          input{
+            
+              width: 100%;
+              border-radius: 8px;
+              border: none;
+              padding: 10px 15px;
+              margin-bottom: 20px;
+
+          }
+
+          input:focus{
+            outline: none;
+          }
+
+          button{
+            
+              width: 100%;
+              border: none;
+              margin: 20px 0;
+              padding: 10px 15px;
+              border-radius: 5px;
+              background-color: $primary-color;
+              color: white;
+
+          }
+          p{
+            
+            text-align: end;
+            display: block;
+            cursor: pointer;
+          }
+        }
+
+        .icon-close{
+          
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          color: $primary-color;
+          cursor: pointer;
+          font-size: 30px;
+        }
+    }
+}
+
+
+
+
+
 // footer
 footer {
   background-color: $secondary-color;

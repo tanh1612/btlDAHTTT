@@ -4,7 +4,16 @@ import Navbar from "react-bootstrap/Navbar";
 import Logo from "../../assets/logo.png";
 import { Col, Row } from "react-bootstrap";
 
+import { useState } from "react";
+import ModalLogin from "./ModalLogin";
+
+
 const Header = () => {
+    const [isShowModalLogin,setIsShowModalLogin] = useState(false);
+
+    const handleCloseModalLogin = () => {
+      setIsShowModalLogin(false);
+    }
   return (
     <>
       <header className="shadow">
@@ -42,7 +51,7 @@ const Header = () => {
                     </InputGroup.Text>
                   </InputGroup>
                 </Form>
-                <button className="btn btn-dark me-2">Đăng nhập</button>
+                <button className="btn btn-dark me-2" onClick={() => setIsShowModalLogin(true)}>Đăng nhập</button>
                 <button className="btn btn-dark">Đăng ký</button>
               </div>
             </Navbar.Collapse>
@@ -66,6 +75,7 @@ const Header = () => {
           </Row>
         </div>
       </header>
+      <ModalLogin isShowModalLogin={isShowModalLogin} handleCloseModalLogin={handleCloseModalLogin}/>
     </>
   );
 };

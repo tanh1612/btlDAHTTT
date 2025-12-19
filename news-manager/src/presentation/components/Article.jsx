@@ -7,7 +7,11 @@ import Article6 from "../../assets/article6.png";
 import Article7 from "../../assets/article7.png";
 import Article8 from "../../assets/article8.png";
 
+
+
 const Article = () => {
+
+
   return (
     <>
       <div className="article">
@@ -182,6 +186,8 @@ const Article = () => {
           </div>
         </div>
       </div>
+
+      
     </>
   );
 };
