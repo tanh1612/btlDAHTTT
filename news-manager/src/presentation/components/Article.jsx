@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Article1 from "../../assets/article1.png";
 import Article2 from "../../assets/article2.png";
 import Article3 from "../../assets/article3.png";
@@ -7,171 +8,134 @@ import Article6 from "../../assets/article6.png";
 import Article7 from "../../assets/article7.png";
 import Article8 from "../../assets/article8.png";
 
-
-
 const Article = () => {
-
-
   return (
     <>
-      <div className="article mt-5">
-        <div className="container py-5">
+      <div className="article py-5">
+        <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article1} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">powershell</a>
-                    </span>
-                    <span className="tag">
-                      <a href="">tips-tricks</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">
-                    Nén và giải nén file bằng lệnh câu lệnh trong PowerShell
-                  </a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article2} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">tips-tricks</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">Thủ thuật tăng tốc độ Windows 11</a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article3} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">wifi</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">Sửa lỗi Wifi chậm trên Laptop.</a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article4} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">security</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">
-                    Cách tắt Multi Factor Authentication (MFA) trong Office 365
-                  </a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article5} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">excel</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">
-                    Cách tạo Timeline trong Excel PivotTables và PivotCharts
-                  </a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article6} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">error-fix</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">
-                    Sửa lỗi “Missing Entry: PcaWallpaperAppDetect” trên Windows
-                    11 24H2
-                  </a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article7} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">network</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">
-                    Cách thay đổi địa chỉ IP của Domain Controller (DC)
-                  </a>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className="col-md-6">
-              <div className="card border-0 mb-4">
-                <div className="card-img">
-                  <a href="">
+              <Link to="/article">
+                <div className="card border-0 mb-4">
+                  <div className="card-img">
                     <img src={Article8} alt="" />
-                  </a>
-                  <div className="card-overlay">
-                    <span className="tag">
-                      <a href="">linux</a>
-                    </span>
-                    <span className="tag">
-                      <a href="">security</a>
-                    </span>
+                    <div className="card-overlay">
+                      <span className="tag">wifi</span>
+                    </div>
+                  </div>
+                  <div className="card-body pt-3">
+                    Sửa lỗi Wifi chậm trên Laptop.
                   </div>
                 </div>
-                <div className="card-body pt-3">
-                  <a href="">Cách lấy lại mật khẩu Root trong RHEL Systems</a>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
-          <div className="text-center -3">
+          <div className="text-center">
             <a href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -186,8 +150,6 @@ const Article = () => {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 };

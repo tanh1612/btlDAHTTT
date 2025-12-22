@@ -3,6 +3,7 @@ import Home from "./presentation/pages/Home";
 import Dashboard from "./presentation/pages/Dashboard";
 import ArticleAdmin from "./presentation/pages/ArticleAdmin";
 import LayoutAdmin from "./presentation/components/LayoutAdmin";
+import ArticleDetail from "./presentation/pages/ArticleDetail";
 
 function App() {
   return (
@@ -10,12 +11,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="article" element={<ArticleDetail />} />
           <Route path="/admin" element={<LayoutAdmin />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="articles" element={<ArticleAdmin />} />
           </Route>
-
-
         </Routes>
       </BrowserRouter>
     </>
