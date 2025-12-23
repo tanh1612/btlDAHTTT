@@ -5,8 +5,8 @@ export default class TagService {
     this.repository = new TagRepository();
   }
 
-  async getTagList() {
-    return await this.repository.getAll();
+  async getTagList(url) {
+    return await this.repository.getAll(url);
   }
 
   async createTag(tag) {

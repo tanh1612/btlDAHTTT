@@ -358,6 +358,69 @@ header {
       }
 
     }
+
+    .category-tag{
+      margin: 50px auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      .ant-card{
+        width: 50%;
+        height: 400px;
+        overflow: scroll;
+        max-height: 500px;
+
+      .ant-card-head{
+            
+        font-size: 15px;
+        text-align: start;
+
+      }
+      .ant-card-body{
+        position: relative;
+        .category{
+          background-color: #d9d9d9;
+          padding: 10px 15px;
+          border-radius: 5px;
+          box-shadow: rgba(100, 100, 111, 0.5) 0px 4px 6px 1px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px auto;
+          width: 200px;
+          .category-title{
+            font-weight: 500;
+            background-color: transparent;
+            border: none;
+            display: inline;
+            width: 90%;
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+        .icon-update{
+          cursor: pointer;
+          font-size: 25px;
+
+        }
+        .icon-tick{
+          font-size: 28px;
+          color: green;
+          cursor: pointer;
+        }
+        .icon-add{
+          position: absolute;
+          bottom: 53px;
+          right: 10px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    }
+
   }
   header{
     button {

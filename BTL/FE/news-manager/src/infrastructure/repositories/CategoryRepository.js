@@ -5,9 +5,9 @@ export default class CategoryRepository {
     this.baseUrl = "";
   }
 
-  async getAll() {
+  async getAll(url) {
     try {
-      const res = await axios.get(this.baseUrl);
+      const res = await axios.get(url + "/category");
       return res.data;
     } catch (error) {
       console.error("Lỗi lấy danh sách category: ", error);
@@ -25,10 +25,10 @@ export default class CategoryRepository {
     }
   }
 
-  async update(category) {
+  async update(urlApi,categoryId,infoCategory) {
     try {
-      const url = `${this.baseUrl}/${category.category_id}`;
-      const res = await axios.put(url, category);
+      const url = `${urlApi}/category/update/${categoryId}`;
+      const res = await axios.put(url, infoCategory);
       return res.data;
     } catch (error) {
       console.error("Lỗi chỉnh sửa category: ", error);

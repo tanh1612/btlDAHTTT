@@ -5,9 +5,9 @@ export default class TagRepository {
     this.baseUrl = "";
   }
 
-  async getAll() {
+  async getAll(url) {
     try {
-      const res = await axios.get(this.baseUrl);
+      const res = await axios.get(url + "/tag");
       return res.data;
     } catch (error) {
       console.error("Lỗi lấy danh sách tag: ", error);

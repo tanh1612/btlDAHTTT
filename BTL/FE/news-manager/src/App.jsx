@@ -3,6 +3,7 @@ import Home from "./presentation/pages/Home";
 import Dashboard from "./presentation/pages/Dashboard";
 import ArticleAdmin from "./presentation/pages/ArticleAdmin";
 import LayoutAdmin from "./presentation/components/LayoutAdmin";
+import CategoryAndTag from "./presentation/pages/CategoryAndTag";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
           <Route path="/admin" element={<LayoutAdmin />}>
             <Route path="" element={<Dashboard />} />
             <Route path=":articles" element={<ArticleAdmin />} />
+            <Route path="category-tag" element={<CategoryAndTag />} />
+
           </Route>
 
 

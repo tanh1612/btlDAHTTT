@@ -5,16 +5,16 @@ export default class CategoryService {
     this.repository = new CategoryRepository();
   }
 
-  async getCategoryList() {
-    return await this.repository.getAll();
+  async getCategoryList(url) {
+    return await this.repository.getAll(url);
   }
 
   async createCategory(category) {
     return await this.repository.create(category);
   }
 
-  async updateCategory(category) {
-    return await this.repository.update(category);
+  async updateCategory(urlApi,categoryId,infoCategory) {
+    return await this.repository.update(urlApi,categoryId,infoCategory);
   }
 
   async deleteCategory(category_id) {

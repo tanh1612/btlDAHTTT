@@ -54,11 +54,14 @@ module.exports.update = async (req, res) => {
     });
     return;
   }
+  const descriptionOfCategoryId = await categoryModel.findOne({
+    _id: categoryId
+  });
   await categoryModel.updateOne({
     _id: categoryId
   },{
     category_name,
-    description
+    description: description ? description : descriptionOfCategoryId.description
   })
   res.json({
     code: 200,
