@@ -8,10 +8,10 @@ $primary-white: #d9d9d9;
 $primary-color: #5e0a0a;
 $secondary-color: #a19191;
 $primary-black: #000000;
-$color-article: #2082F4;
-$color-approved: #0BC9C9;
-$color-reject: #D27B4A;
-$button-color: #C27E7E;
+$color-article: #2082f4;
+$color-approved: #0bc9c9;
+$color-reject: #d27b4a;
+$button-color: #c27e7e;
 
 body {
   font-family: $primary-font;
@@ -124,84 +124,96 @@ header {
   }
 }
 
-// auth 
-.card-modal{
-  
-    width: 80%;
-    height: 400px;
-    max-height: 500px;
-    margin: 20px auto;
-    background-color: #a19191;
-    border-radius: 5px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 100rem;
-    z-index: 999;
-
-    .modal-content {
-        position: relative;
-
-        span{
-
-          margin: 20px auto;
-          color: $primary-color;
-          font-size: 28px;
-          font-weight: 500;
-          
-        }
-        form{
-          
-          margin: 20px auto;
-          width: 60%;
-          
-          input{
-            
-              width: 100%;
-              border-radius: 8px;
-              border: none;
-              padding: 10px 15px;
-              margin-bottom: 20px;
-
-          }
-
-          input:focus{
-            outline: none;
-          }
-
-          button{
-            
-              width: 100%;
-              border: none;
-              margin: 20px 0;
-              padding: 10px 15px;
-              border-radius: 5px;
-              background-color: $primary-color;
-              color: white;
-
-          }
-          p{
-            
-            text-align: end;
-            display: block;
-            cursor: pointer;
-          }
-        }
-
-        .icon-close{
-          
-          position: absolute;
-          top: 10px;
-          right: 20px;
-          color: $primary-color;
-          cursor: pointer;
-          font-size: 30px;
-        }
+.article-detail {
+  background-color: $primary-white;
+  font-weight: 500;
+  .container {
+    width: 1100px;
+    h1 {
+      color: $primary-color;
     }
+    ul {
+      margin: 16px 0;
+      li {
+        margin-bottom: 8px;
+      }
+    }
+    img {
+      width: 100%;
+      display: block;
+      margin: 12px auto;
+    }
+  }
 }
 
-.ant-alert{
+// auth
+.card-modal {
+  width: 80%;
+  height: 400px;
+  max-height: 500px;
+  margin: 20px auto;
+  background-color: #a19191;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 100rem;
+  z-index: 999;
+
+  .modal-content {
+    position: relative;
+
+    span {
+      margin: 20px auto;
+      color: $primary-color;
+      font-size: 28px;
+      font-weight: 500;
+    }
+    form {
+      margin: 20px auto;
+      width: 60%;
+
+      input {
+        width: 100%;
+        border-radius: 8px;
+        border: none;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        border: none;
+        margin: 20px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: white;
+      }
+      p {
+        text-align: end;
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .icon-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: $primary-color;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
+}
+
+.ant-alert {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -209,24 +221,21 @@ header {
   z-index: 1000;
 }
 
-
-.layout-admin{
-  .sider{
+.layout-admin {
+  .sider {
     background-color: $primary-black;
     height: 100%;
     padding: 10px 20px;
 
-    .sider-header{
+    .sider-header {
       padding: 10px 20px;
-      img{
-        
+      img {
         width: 100px;
         height: 100px;
         object-fit: contain;
         aspect-ratio: 16/9;
       }
-      .admin{
-        
+      .admin {
         width: 200px;
         margin: 10px auto;
         display: flex;
@@ -236,34 +245,31 @@ header {
         background-color: $primary-white;
         gap: 10px;
         cursor: pointer;
-        .icon-admin{
+        .icon-admin {
           color: $primary-black;
         }
-        span{
+        span {
           color: $primary-black;
-
         }
       }
-
     }
-    .sider-content{
+    .sider-content {
       height: 200px;
       max-height: 500px;
       margin: 20px 0;
-      ul{
+      ul {
         list-style-type: none;
         padding: 0;
         text-align: start;
         width: 100%;
         height: 100%;
-        li{
+        li {
           background-color: #5e0a0a;
           height: 40px;
           margin: 10px 0;
           padding: 10px 15px;
           border-radius: 5px;
-          a{
-          
+          a {
             text-decoration: none;
             color: white;
             display: inline;
@@ -272,9 +278,9 @@ header {
       }
     }
   }
-  .content{
+  .content {
     width: 100%;
-    .content-header{
+    .content-header {
       width: 100%;
       box-shadow: var(--bs-box-shadow) !important;
       height: 100%;
@@ -284,39 +290,35 @@ header {
         padding-left: 10px;
         font-weight: 700;
       }
-      .icon{
+      .icon {
         font-size: 24px;
         cursor: pointer;
       }
-
     }
-    .dashboard{
+    .dashboard {
       margin: 30px auto;
-      
-      .main-content{
+
+      .main-content {
         margin: 30px 0;
         padding: 0px 15px;
-        .statistic-article{
+        .statistic-article {
           display: flex;
           gap: 20px;
           width: 100%;
-          .ant-card{
+          .ant-card {
             background-color: $color-article;
-            .ant-card-body{
-                    
+            .ant-card-body {
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 20px;
-              
-              .icon{
-                        
+
+              .icon {
                 font-size: 38px;
                 color: white;
-    
               }
-              .information-article{
-                span{
+              .information-article {
+                span {
                   display: flex;
                   flex-direction: column;
                   font-size: 16px;
@@ -324,31 +326,25 @@ header {
                   color: white;
                   font-weight: 700;
                 }
-                span:nth-child(2){
+                span:nth-child(2) {
                   font-size: 28px;
-  
                 }
               }
             }
           }
-          .ant-card:nth-child(2){
+          .ant-card:nth-child(2) {
             background-color: $color-approved;
-  
           }
-          .ant-card:nth-child(3){
+          .ant-card:nth-child(3) {
             background-color: $color-reject;
-  
           }
-          
-          
-          
         }
       }
-      .chart{
+      .chart {
         width: 600px;
         height: 600px;
         border: 3px solid #ccc;
-        box-shadow: rgba(111,100,100,0.5) 1px 2px 1px 0px;
+        box-shadow: rgba(111, 100, 100, 0.5) 1px 2px 1px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -356,73 +352,67 @@ header {
         margin: 30px auto;
         padding: 10px 15px;
       }
-
     }
 
-    .category-tag{
+    .category-tag {
       margin: 50px auto;
       display: flex;
       justify-content: center;
       gap: 20px;
-      .ant-card{
+      .ant-card {
         width: 50%;
         height: 400px;
         overflow: scroll;
         max-height: 500px;
 
-      .ant-card-head{
-            
-        font-size: 15px;
-        text-align: start;
-
-      }
-      .ant-card-body{
-        position: relative;
-        .category{
-          background-color: #d9d9d9;
-          padding: 10px 15px;
-          border-radius: 5px;
-          box-shadow: rgba(100, 100, 111, 0.5) 0px 4px 6px 1px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 20px auto;
-          width: 200px;
-          .category-title{
-            font-weight: 500;
-            background-color: transparent;
-            border: none;
-            display: inline;
-            width: 90%;
-            &:focus{
-              outline: none;
+        .ant-card-head {
+          font-size: 15px;
+          text-align: start;
+        }
+        .ant-card-body {
+          position: relative;
+          .category {
+            background-color: #d9d9d9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.5) 0px 4px 6px 1px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 200px;
+            .category-title {
+              font-weight: 500;
+              background-color: transparent;
+              border: none;
+              display: inline;
+              width: 90%;
+              &:focus {
+                outline: none;
+              }
             }
           }
-        }
-        .icon-update{
-          cursor: pointer;
-          font-size: 25px;
-
-        }
-        .icon-tick{
-          font-size: 28px;
-          color: green;
-          cursor: pointer;
-        }
-        .icon-add{
-          position: absolute;
-          bottom: 53px;
-          right: 10px;
-          font-size: 20px;
-          cursor: pointer;
+          .icon-update {
+            cursor: pointer;
+            font-size: 25px;
+          }
+          .icon-tick {
+            font-size: 28px;
+            color: green;
+            cursor: pointer;
+          }
+          .icon-add {
+            position: absolute;
+            bottom: 53px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+          }
         }
       }
     }
-
-    }
-
   }
-  header{
+  header {
     button {
       background-color: $primary-white;
       color: $primary-black;
@@ -435,67 +425,66 @@ header {
       }
     }
   }
-  .article-not-approved{
+  .article-not-approved {
     margin: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 15px;
-    table{
+    table {
       background-color: #ffffff;
       color: #000000;
-      thead{
+      thead {
         border-bottom: 1px solid #ccc;
-        th{
+        th {
           padding: 10px 0;
         }
       }
-      tbody{
+      tbody {
         border-bottom: 1px solid #ccc;
-        tr{
+        tr {
           border-bottom: 1px solid #ccc;
-          td{
+          td {
             padding: 10px 5px;
-            .title{
+            .title {
               display: flex;
               justify-content: start;
               align-items: center;
               padding: 10px 15px;
               gap: 10px;
-              img{
+              img {
                 width: 100px;
                 height: 50px;
                 object-fit: contain;
                 aspect-ratio: 16/9;
               }
-              p{
+              p {
                 margin-bottom: 0;
                 font-weight: 500;
               }
             }
-            .icon{
+            .icon {
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 10px;
               padding: 10px;
               font-size: 28px;
-              .icon-close{
+              .icon-close {
                 color: red;
                 cursor: pointer;
               }
-              .icon-tick{
+              .icon-tick {
                 color: green;
                 cursor: pointer;
-              
               }
             }
-            .page{
+            .page {
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 20px;
-              span{
+              span {
                 background-color: black;
                 color: white;
                 padding: 4px 10px;
@@ -504,13 +493,11 @@ header {
               }
             }
           }
-
         }
       }
     }
   }
 }
-
 
 // footer
 footer {
