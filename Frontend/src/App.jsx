@@ -5,6 +5,7 @@ import ArticleDetail from "./presentation/pages/ArticleDetail";
 import ArticleAdmin from "./presentation/pages/ArticleAdmin";
 import LayoutAdmin from "./presentation/components/LayoutAdmin";
 import CategoryAndTag from "./presentation/pages/CategoryAndTag";
+import AuthorPage from "./presentation/pages/AuthorPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/author" element={<AuthorPage />} />
           <Route path="article" element={<ArticleDetail />} />
           <Route path="/admin" element={<LayoutAdmin />}>
             <Route path="" element={<Dashboard />} />

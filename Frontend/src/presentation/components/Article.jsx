@@ -8,8 +8,8 @@ const Article = ({ data }) => {
 
   return (
     <>
-      <div className="article mt-5">
-        <div className="container py-5">
+      <div className="article py-5">
+        <div className="container">
           <div className="row">
             {articles &&
               articles.map((article) => {

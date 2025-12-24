@@ -6,10 +6,14 @@ import { Col, Row } from "react-bootstrap";
 
 import { useState } from "react";
 import ModalLogin from "./ModalLogin";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
     const [isShowModalLogin,setIsShowModalLogin] = useState(false);
+    const user = useSelector(state => state.reducerAuth);
+    const navigate = useNavigate();
 
     const handleCloseModalLogin = () => {
       setIsShowModalLogin(false);
@@ -51,8 +55,24 @@ const Header = () => {
                     </InputGroup.Text>
                   </InputGroup>
                 </Form>
-                <button className="btn btn-dark me-2" onClick={() => setIsShowModalLogin(true)}>Đăng nhập</button>
-                <button className="btn btn-dark">Đăng ký</button>
+                {user ? (
+                  <button
+                    className="btn btn-dark"
+                    onClick={() => navigate("/author")}
+                  >
+                    {user.full_name}
+                  </button>
+                ) : (
+                  <>
+                    <button
+                      className="btn btn-dark me-2"
+                      onClick={() => setIsShowModalLogin(true)}
+                    >
+                      Đăng nhập
+                    </button>
+                    <button className="btn btn-dark">Đăng ký</button>
+                  </>
+                )}
               </div>
             </Navbar.Collapse>
           </Navbar>
