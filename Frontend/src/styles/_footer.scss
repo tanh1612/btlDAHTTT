@@ -1,0 +1,19 @@
+// footer
+footer {
+  background-color: $secondary-color;
+  .row {
+    color: $primary-color;
+    img {
+      scale: 1.3;
+    }
+    span {
+      color: $primary-white;
+    }
+    .follow {
+      font-weight: bolder;
+      span {
+        color: $primary-color;
+      }
+    }
+  }
+}

@@ -23,11 +23,7 @@ function App() {
             <Route path="category-tag" element={<CategoryAndTag />} />
             <Route path="category-tag/category/create" element={<CreateCategory />} />
             <Route path="category-tag/tag/create" element={<CreateTag />} />
-
-
           </Route>
-
-
         </Routes>
       </BrowserRouter>
     </>

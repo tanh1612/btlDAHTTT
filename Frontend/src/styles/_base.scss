@@ -1,0 +1,30 @@
+body {
+  font-family: $primary-font;
+  font-size: 1em;
+  color: $primary-black;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+.ant-alert{
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  z-index: 1000;
+}
