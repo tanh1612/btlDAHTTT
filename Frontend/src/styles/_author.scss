@@ -1,74 +1,119 @@
 // Author Page
 .author-page {
-  background-color: $primary-white;
+  background-color: $primary-white; // Gray #d9d9d9
+  min-height: 80vh;
+
   .container {
-    max-width: 1100px;
-    background-color: #d9d9d9;
-    padding: 50px;
-    border: 1px solid #000;
+    background-color: $color-white; 
+    padding: 60px;
+    border-radius: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
 
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+
     h2 {
-      font-weight: 500;
-      margin-bottom: 40px;
-      text-align: left !important;
-      padding-left: 20px;
+      font-weight: 700;
+      color: $primary-black;
+      letter-spacing: -0.5px;
     }
     
     .list-articles {
-        padding: 0 20px;
+        margin-top: 30px;
     }
 
     .card-author-article {
-      background-color: #d9d9d9;
-      border: 1px solid #000;
-      border-radius: 0; // Square corners as per image? Or slight radius. Image usage: simple box.
+      background-color: $color-white;
+      border: 1px solid rgba(0,0,0,0.05); // Subtle separator using alpha, could be a variable but clear enough
+      border-radius: 16px;
       padding: 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      }
       
       .row {
         margin: 0;
-        border-bottom: 1px solid #000; // Separation line? 
-        // Actually image shows individual cards separated.
-        // Let's stick to separate cards.
       }
-      border: 1px solid #000;
-      margin-bottom: 20px;
-      
-      .img-fluid {
-        border-right: 1px solid #000;
-        border-radius: 0;
-        height: 120px !important;
-        width: 200px !important;
-        max-width: none;
+
+      .article-image-wrapper {
+        height: 140px;
+        overflow: hidden;
+        
+        .article-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
       }
       
-      h5 {
-          font-weight: 500;
-          font-size: 1.1rem;
+      .card-body {
+        padding: 20px 30px;
+      }
+      
+      .article-title {
+          font-size: 1.25rem;
+          color: $primary-black;
+          line-height: 1.4;
+      }
+
+      .view-btn {
+        color: $text-muted;
+        transition: color 0.2s;
+        
+        &:hover {
+            color: $primary-color;
+        }
       }
 
       .status-badge {
-        font-weight: 500;
-        display: flex;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 6px 16px;
+        border-radius: 50px;
+        display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
         
         &.status-pending {
-          color: #d27b4a; 
+          background-color: $color-pending;
+          color: $color-pending-text; 
         }
         
         &.status-rejected {
-          color: $primary-color;
-          // Add icon via CSS or just text color? 
-          // Component has icon? No, I only put text. 
-          // Image has icons. I will add icons in JSX later if needed, user said "interface only".
+          background-color: $color-reject-bg;
+          color: $color-reject-text;
         }
         
         &.status-approved {
-          color: green;
+          background-color: $color-approved-bg;
+          color: $color-approved-text;
         }
       }
     }
   }
+
+  // Button override
+  .btn-primary {
+    background-color: $primary-color; 
+    border-color: $primary-color;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba($primary-color, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: darken($primary-color, 5%);
+        box-shadow: 0 6px 15px rgba($primary-color, 0.3);
+        transform: translateY(-1px);
+    }
+  }
 }
+
