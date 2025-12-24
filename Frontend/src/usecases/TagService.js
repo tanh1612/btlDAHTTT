@@ -9,15 +9,15 @@ export default class TagService {
     return await this.repository.getAll(url);
   }
 
-  async createTag(tag) {
-    return await this.repository.create(tag);
+  async createTag(url,infoTag) {
+    return await this.repository.create(url,infoTag);
   }
 
-  async updateTag(tag) {
-    return await this.repository.update(tag);
+  async updateTag(urlApi,id,infoTag) {
+    return await this.repository.update(urlApi,id,infoTag);
   }
 
-  async deleteTag(tag_id) {
-    return await this.repository.delete(tag_id);
+  async deleteTag(urlApi,id) {
+    return await this.repository.delete(urlApi,id);
   }
 }

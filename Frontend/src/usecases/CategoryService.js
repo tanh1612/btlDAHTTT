@@ -9,15 +9,15 @@ export default class CategoryService {
     return await this.repository.getAll(url);
   }
 
-  async createCategory(category) {
-    return await this.repository.create(category);
+  async createCategory(url,infoCategory) {
+    return await this.repository.create(url,infoCategory);
   }
 
   async updateCategory(urlApi,categoryId,infoCategory) {
     return await this.repository.update(urlApi,categoryId,infoCategory);
   }
 
-  async deleteCategory(category_id) {
-    return await this.repository.delete(category_id);
+  async deleteCategory(urlApi,id) {
+    return await this.repository.delete(urlApi,id);
   }
 }

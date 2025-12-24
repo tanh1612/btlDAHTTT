@@ -15,9 +15,9 @@ export default class CategoryRepository {
     }
   }
 
-  async create(category) {
+  async create(url,infoCategory) {
     try {
-      const res = await axios.post(this.baseUrl, category);
+      const res = await axios.post(url + "/category/create", infoCategory);
       return res.data;
     } catch (error) {
       console.error("Lỗi tạo mới category: ", error);
@@ -36,11 +36,11 @@ export default class CategoryRepository {
     }
   }
 
-  async delete(category_id) {
+  async delete(urlApi,id) {
     try {
-      const url = `${this.baseUrl}/${category_id}`;
-      await axios.delete(url);
-      return true;
+      const url = `${urlApi}/category/delete/${id}`;
+      const res = await axios.delete(url);
+      return res.data;
     } catch (error) {
       console.error("Lỗi xóa category: ", error);
       return false;

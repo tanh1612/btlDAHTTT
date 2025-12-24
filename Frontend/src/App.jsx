@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./presentation/pages/Home";
 import Dashboard from "./presentation/pages/Dashboard";
-import ArticleDetail from "./presentation/pages/ArticleDetail";
 import ArticleAdmin from "./presentation/pages/ArticleAdmin";
 import LayoutAdmin from "./presentation/components/LayoutAdmin";
 import CategoryAndTag from "./presentation/pages/CategoryAndTag";
 import AuthorPage from "./presentation/pages/AuthorPage";
+import CreateCategory from "./presentation/pages/CreateCategory";
+import CreateTag from "./presentation/pages/CreateTag";
+import ArticleDetail from "./presentation/pages/ArticleDetail";
 
 function App() {
   return (
@@ -19,7 +21,13 @@ function App() {
             <Route path="" element={<Dashboard />} />
             <Route path=":articles" element={<ArticleAdmin />} />
             <Route path="category-tag" element={<CategoryAndTag />} />
+            <Route path="category-tag/category/create" element={<CreateCategory />} />
+            <Route path="category-tag/tag/create" element={<CreateTag />} />
+
+
           </Route>
+
+
         </Routes>
       </BrowserRouter>
     </>
