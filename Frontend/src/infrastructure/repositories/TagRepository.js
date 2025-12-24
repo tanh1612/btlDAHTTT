@@ -15,9 +15,9 @@ export default class TagRepository {
     }
   }
 
-  async create(tag) {
+  async create(url,infoTag) {
     try {
-      const res = await axios.post(this.baseUrl, tag);
+      const res = await axios.post(url + "/tag/create", infoTag);
       return res.data;
     } catch (error) {
       console.error("Lỗi tạo mới tag: ", error);
@@ -25,10 +25,10 @@ export default class TagRepository {
     }
   }
 
-  async update(tag) {
+  async update(urlApi,id,infoTag) {
     try {
-      const url = `${this.baseUrl}/${tag.tag_id}`;
-      const res = await axios.put(url, tag);
+      const url = `${urlApi}/tag/update/${id}`;
+      const res = await axios.put(url, infoTag);
       return res.data;
     } catch (error) {
       console.error("Lỗi chỉnh sửa tag: ", error);
@@ -36,11 +36,11 @@ export default class TagRepository {
     }
   }
 
-  async delete(tag_id) {
+  async delete(urlApi,id) {
     try {
-      const url = `${this.baseUrl}/${tag_id}`;
-      await axios.delete(url);
-      return true;
+      const url = `${urlApi}/tag/delete/${id}`;
+      const res = await axios.delete(url);
+      return res.data;
     } catch (error) {
       console.error("Lỗi xóa tag: ", error);
       return false;

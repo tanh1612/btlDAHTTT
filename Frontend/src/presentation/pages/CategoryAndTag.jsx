@@ -2,33 +2,19 @@ import { Alert, Card } from "antd";
 import { IoPencil } from "react-icons/io5";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { TiTick } from "react-icons/ti";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import CategoryService from "../../usecases/CategoryService";
 import { API_URL_ADMIN } from "../../constants/api";
 import TagService from "../../usecases/TagService";
+import { Link } from "react-router-dom";
+import useUpdateCategory from "../../hooks/useUpdateCategory";
+import { MdDelete } from "react-icons/md";
+
 export default function CategoryAndTag() {
   const [categories, setCategory] = useState([]);
   const [tags, setTag] = useState([]);
   const [isUpdate, setIsUpdate] = useState({});
   const [text, setText] = useState("");
-  const refText = useRef("");
-  const [showAlert, isShowAlert] = useState({
-    title: "",
-    type: "",
-    show: false,
-  });
-  useEffect(() => {
-    let timer;
-    if (showAlert.show) {
-      timer = setTimeout(() => {
-        isShowAlert({
-          ...showAlert,
-          show: false,
-        });
-      }, 3000);
-    }
-    return () => clearTimeout(timer);
-  }, [showAlert]);
 
   const handleUpdate = (id) => {
     setIsUpdate((prev) => ({
@@ -36,38 +22,10 @@ export default function CategoryAndTag() {
       [id]: !prev[id],
     }));
   };
-  const handleUpdateSuccess = async (id) => {
-    const newCategoryService = new CategoryService();
-    // const newTagService = new TagService();
-    const resCategories = await newCategoryService.updateCategory(
-      API_URL_ADMIN,
-      id,
-      {
-        category_name: refText.current,
-      }
-    );
-    if (resCategories.code === 200) {
-      isShowAlert({
-        title: resCategories.message,
-        type: "success",
-        show: true,
-      });
-      setIsUpdate((prev) => ({
-        ...prev,
-        [id]: false,
-      }));
-    } else {
-      isShowAlert({
-        title: resCategories.message,
-        type: "error",
-        show: true,
-      });
-      setIsUpdate((prev) => ({
-        ...prev,
-        [id]: false,
-      }));
-    }
-  };
+
+  const { showAlert, refText, handleUpdateSuccess, handleDelete} =
+    useUpdateCategory(setIsUpdate);
+
   useEffect(() => {
     const fetchApi = async () => {
       try {
@@ -90,6 +48,7 @@ export default function CategoryAndTag() {
     fetchApi();
   }, [isUpdate]);
 
+  
   return (
     <>
       {showAlert.show && (
@@ -125,14 +84,22 @@ export default function CategoryAndTag() {
                   {isUpdate[category._id] && (
                     <TiTick
                       className="icon-tick"
-                      onClick={() => handleUpdateSuccess(category._id)}
+                      onClick={() =>
+                        handleUpdateSuccess(category._id, "category")
+                      }
                     />
                   )}
+                  <MdDelete
+                    className="icon-delete"
+                    onClick={() => handleDelete(category._id, "category")}
+                  />
                 </div>
               );
             })}
 
-          <IoIosAddCircleOutline className="icon-add" />
+          <Link className="icon-add" to="category/create">
+            <IoIosAddCircleOutline />
+          </Link>
         </Card>
         <Card title="Thẻ" variant="borderless" style={{ width: 300 }}>
           {tags &&
@@ -141,16 +108,36 @@ export default function CategoryAndTag() {
                 <div className="category" key={tag._id}>
                   <input
                     className="category-title"
-                    value={tag.tag_name}
-                    readOnly
+                    value={isUpdate[tag._id] ? text : tag.tag_name}
+                    readOnly={isUpdate[tag._id] ? false : true}
+                    onChange={(e) => {
+                      refText.current = e.target.value;
+                      setText(e.target.value);
+                    }}
                   />
-                  <IoPencil className="icon-update" />
-                  <TiTick className="icon-tick" />
+                  {!isUpdate[tag._id] && (
+                    <IoPencil
+                      className="icon-update"
+                      onClick={() => handleUpdate(tag._id)}
+                    />
+                  )}
+                  {isUpdate[tag._id] && (
+                    <TiTick
+                      className="icon-tick"
+                      onClick={() => handleUpdateSuccess(tag._id, "tag")}
+                    />
+                  )}
+                  <MdDelete
+                    className="icon-delete"
+                    onClick={() => handleDelete(tag._id, "tag")}
+                  />
                 </div>
               );
             })}
 
-          <IoIosAddCircleOutline className="icon-add" />
+          <Link className="icon-add" to="tag/create">
+            <IoIosAddCircleOutline />
+          </Link>
         </Card>
       </div>
     </>

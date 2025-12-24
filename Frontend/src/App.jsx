@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./presentation/pages/Home";
 import Dashboard from "./presentation/pages/Dashboard";
-import ArticleDetail from "./presentation/pages/ArticleDetail";
 import ArticleAdmin from "./presentation/pages/ArticleAdmin";
 import LayoutAdmin from "./presentation/components/LayoutAdmin";
 import CategoryAndTag from "./presentation/pages/CategoryAndTag";
+import CreateCategory from "./presentation/pages/CreateCategory";
+import CreateTag from "./presentation/pages/CreateTag";
 
 function App() {
   return (
@@ -12,12 +13,17 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="article" element={<ArticleDetail />} />
           <Route path="/admin" element={<LayoutAdmin />}>
             <Route path="" element={<Dashboard />} />
             <Route path=":articles" element={<ArticleAdmin />} />
             <Route path="category-tag" element={<CategoryAndTag />} />
+            <Route path="category-tag/category/create" element={<CreateCategory />} />
+            <Route path="category-tag/tag/create" element={<CreateTag />} />
+
+
           </Route>
+
+
         </Routes>
       </BrowserRouter>
     </>
