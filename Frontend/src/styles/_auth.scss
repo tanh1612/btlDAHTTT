@@ -112,4 +112,21 @@
              }
         }
     }
+
+    &.register-modal {
+      height: auto;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding-bottom: 20px;
+
+      .modal-content {
+          form {
+              width: 80%;
+              
+              input {
+                  margin-bottom: 15px;
+              }
+          }
+      }
+  }
 }

@@ -7,6 +7,7 @@ import { Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import ModalLogin from "./ModalLogin";
 import ModalLogout from "./ModalLogout"; 
+import ModalRegister from "./ModalRegister";
 import { Link, useNavigate, useLocation } from "react-router-dom"; 
 import { useSelector } from "react-redux";
 
@@ -14,6 +15,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
     const [isShowModalLogin,setIsShowModalLogin] = useState(false);
     const [isShowModalLogout, setIsShowModalLogout] = useState(false); 
+    const [isShowModalRegister, setIsShowModalRegister] = useState(false);
     const user = useSelector(state => state.reducerAuth);
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,6 +26,10 @@ const Header = () => {
 
     const handleCloseModalLogout = () => {
       setIsShowModalLogout(false);
+    }
+
+    const handleCloseModalRegister = () => {
+      setIsShowModalRegister(false);
     }
 
     const handleUserClick = () => {
@@ -86,7 +92,12 @@ const Header = () => {
                     >
                       Đăng nhập
                     </button>
-                    <button className="btn btn-dark">Đăng ký</button>
+                    <button 
+                      className="btn btn-dark"
+                      onClick={() => setIsShowModalRegister(true)}
+                    >
+                      Đăng ký
+                    </button>
                   </>
                 )}
               </div>
@@ -113,6 +124,7 @@ const Header = () => {
       </header>
       <ModalLogin isShowModalLogin={isShowModalLogin} handleCloseModalLogin={handleCloseModalLogin}/>
       <ModalLogout isShowModalLogout={isShowModalLogout} handleCloseModalLogout={handleCloseModalLogout}/>
+      <ModalRegister isShowModalRegister={isShowModalRegister} handleCloseModalRegister={handleCloseModalRegister}/>
     </>
   );
 };

@@ -8,4 +8,8 @@ export default class AuthService {
   async login(url, account) {
     return await this.repository.login(url, account);
   }
+
+  async register(url, account) {
+    return await this.repository.register(url, account);
+  }
 }

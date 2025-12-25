@@ -12,4 +12,14 @@ export default class AuthRepository {
     }
   }
 
+  async register(url, account) {
+    try {
+      const res = await axios.post(url + "/register", account);
+      return res.data;
+    } catch (error) {
+      console.error("Lỗi đăng ký tài khoản: ", error);
+      return [];
+    }
+  }
+
 }
