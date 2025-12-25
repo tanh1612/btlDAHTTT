@@ -7,6 +7,8 @@ const articleValidate = require("../../../../validate/article");
 
 router.get("/",controller.index);
 router.put("/update/:article_id",controller.updateStatusArticle);
+router.get("/approved",controller.articleApproved);
+
 
 
 

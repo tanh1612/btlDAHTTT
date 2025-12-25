@@ -40,7 +40,6 @@ export default function ArticleNotApproved({ data }) {
           action,
         }
       );
-      console.log(res);
       if (res.code === 200) {
         isShowAlert({
           title: res.message,
@@ -127,6 +126,15 @@ export default function ArticleNotApproved({ data }) {
                   </tr>
                 );
               })}
+            <tr>
+              <td colSpan={4}>
+                <div className="page">
+                  {new Array(5).fill(5).map((item,index) => {
+                    return <span key={index}>{item - (index)}</span>
+                  })}
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

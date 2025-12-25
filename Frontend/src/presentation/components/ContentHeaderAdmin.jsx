@@ -6,10 +6,8 @@ import { Dropdown } from "antd";
 import { Button } from "antd";
 import { useDispatch } from "react-redux";
 import { allArticle } from "../../redux/action/article";
-import { useParams } from "react-router-dom";
 
 export default function ContentHeaderAdmin() {  
-  const params = useParams();
   const dispatch = useDispatch();
   const handleSelectArticleType = (type) => {
     dispatch(allArticle(type));
@@ -59,7 +57,6 @@ export default function ContentHeaderAdmin() {
       <div className="content-header">
         <Row className="text-center d-flex justify-content-between align-items-center">
           <Col xs={6} className="py-2">
-            <a href="">{params && params?.articles === "articles" ? "Quản lý bài đăng": params.articles === "category-tag" ? "Quản lý danh mục và thẻ" : "Trang chủ"}</a>
           </Col>
           <Col xs={12} className="py-2">
             <div className="d-flex align-items-center justify-content-end px-5">

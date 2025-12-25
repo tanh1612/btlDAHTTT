@@ -20,4 +20,7 @@ export default class ArticleService {
   async deleteArticle(article_id) {
     return await this.repository.delete(article_id);
   }
+  async getArticlesApproved(url) {
+    return await this.repository.getArticlesApproved(url);
+  }
 }

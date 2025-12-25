@@ -7,10 +7,26 @@ const approvalHistoryModel = require("../../models/approval-history.model");
 
 
 module.exports.index = async (req, res) => {
+  const page = req.query.page;
   const articles = await articleModel.find();
-  let articlePendings = await articleModel.find({
+  const find = {
     status: "PENDING"
-  });
+  }
+  let pagination = {
+    currentPage: 1,
+    limit: 4,
+  }
+
+  if(page){
+    pagination.currentPage = page;
+  }
+
+  const totalArticle = await articleModel.countDocuments(find);
+  pagination.totalPage = Math.ceil(totalArticle / pagination.limit);
+  pagination.skip = (pagination.totalPage - pagination.currentPage) * pagination.limit;
+
+  let articlePendings = await articleModel.find(find).limit(pagination.limit).skip(pagination.skip);
+
 
   for(let i=0;i<articlePendings.length;i++){
     const author = await userModel.findOne({
@@ -32,7 +48,8 @@ module.exports.index = async (req, res) => {
     code: 200,
     message: "Lấy ra danh sách bài viết thành công",
     articles,
-    articlePendings
+    articlePendings,
+    pagination
   });
 };
 
@@ -74,3 +91,20 @@ module.exports.updateStatusArticle = async (req, res) => {
 }
 
 
+module.exports.articleApproved = async(req,res) => {
+  const articleApproved = await articleModel.find(
+    {status: {$ne: "PENDING"}}
+  );
+  if(articleApproved){
+    res.json({
+      code: 200,
+      message: "Lấy danh sách các bài đăng đã duyệt thành công",
+      articleApproved
+    });
+    return;
+  }
+  res.json({
+    code: 400,
+    message: "Lấy danh sách các bài đăng không thành công"
+  });
+}
