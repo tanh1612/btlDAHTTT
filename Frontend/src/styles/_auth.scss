@@ -1,11 +1,10 @@
 // auth 
 .card-modal{
-  
     width: 80%;
     height: 400px;
     max-height: 500px;
     margin: 20px auto;
-    background-color: #a19191;
+    background-color: $secondary-color;
     border-radius: 5px;
     position: fixed;
     top: 50%;
@@ -52,7 +51,7 @@
               padding: 10px 15px;
               border-radius: 5px;
               background-color: $primary-color;
-              color: white;
+              color: $color-white;
 
           }
           p{
@@ -64,13 +63,53 @@
         }
 
         .icon-close{
-          
           position: absolute;
           top: 10px;
           right: 20px;
           color: $primary-color;
           cursor: pointer;
           font-size: 30px;
+        }
+    }
+
+    &.logout-modal {
+        width: 400px;
+        max-width: 90%;
+        height: auto;
+        min-height: auto;
+        max-height: none;
+        padding: 0;
+        background-color: $secondary-color; 
+        
+        .modal-content {
+             background-color: transparent; 
+             
+             .icon-warning {
+                 color: $primary-color;
+             }
+
+             .title-logout {
+                color: $primary-color;
+                font-weight: bold;
+             }
+
+             .text-logout {
+                 color: $color-white; 
+                 font-size: 16px;
+             }
+             
+             .btn-logout {
+                 background-color: $primary-color;
+                 color: $color-white;
+                 border: none;
+                 &:hover {
+                     background-color: darken($primary-color, 10%);
+                 }
+             }
+
+             .icon-close {
+                 color: $primary-color;
+             }
         }
     }
 }

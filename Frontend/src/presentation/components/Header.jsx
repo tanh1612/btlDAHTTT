@@ -6,18 +6,34 @@ import { Col, Row } from "react-bootstrap";
 
 import { useState } from "react";
 import ModalLogin from "./ModalLogin";
-import { Link, useNavigate } from "react-router-dom";
+import ModalLogout from "./ModalLogout"; 
+import { Link, useNavigate, useLocation } from "react-router-dom"; 
 import { useSelector } from "react-redux";
 
 
 const Header = () => {
     const [isShowModalLogin,setIsShowModalLogin] = useState(false);
+    const [isShowModalLogout, setIsShowModalLogout] = useState(false); 
     const user = useSelector(state => state.reducerAuth);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleCloseModalLogin = () => {
       setIsShowModalLogin(false);
     }
+
+    const handleCloseModalLogout = () => {
+      setIsShowModalLogout(false);
+    }
+
+    const handleUserClick = () => {
+      if (location.pathname === "/author") {
+        setIsShowModalLogout(true);
+      } else {
+        navigate("/author");
+      }
+    };
+
   return (
     <>
       <header className="shadow">
@@ -58,7 +74,7 @@ const Header = () => {
                 {user ? (
                   <button
                     className="btn btn-dark"
-                    onClick={() => navigate("/author")}
+                    onClick={handleUserClick}
                   >
                     {user.full_name}
                   </button>
@@ -96,6 +112,7 @@ const Header = () => {
         </div>
       </header>
       <ModalLogin isShowModalLogin={isShowModalLogin} handleCloseModalLogin={handleCloseModalLogin}/>
+      <ModalLogout isShowModalLogout={isShowModalLogout} handleCloseModalLogout={handleCloseModalLogout}/>
     </>
   );
 };
