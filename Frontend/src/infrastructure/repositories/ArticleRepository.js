@@ -46,4 +46,14 @@ export default class ArticleRepository {
       return false;
     }
   }
+  async getArticlesApproved(url) {
+    try {
+      
+      const res = await axios.get(`${url}/article/approved`);
+      return res.data;
+    } catch (error) {
+      console.error("Lỗi xóa article: ", error);
+      return false;
+    }
+  }
 }

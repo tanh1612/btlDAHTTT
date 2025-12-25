@@ -37,7 +37,7 @@ export default function SiderAdmin() {
                 <Link to="/admin/category-tag">Quản lý danh mục và thẻ</Link>
               </li>
               <li>
-                <Link to="/admin/history-approved">Lịch sử duyệt bài</Link>
+                <Link to="/admin/approval-history">Lịch sử duyệt bài</Link>
               </li>
             </ul>
           </div>
