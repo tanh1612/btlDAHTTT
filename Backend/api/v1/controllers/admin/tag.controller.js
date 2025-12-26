@@ -18,6 +18,16 @@ module.exports.index = async (req, res) => {
 
 module.exports.create = async (req, res) => {
   const tagName = req.body.tag_name;
+  const tagExist = await tagModel.findOne({
+      tag_name
+    });
+    if(tagExist){
+      res.status(400).json({
+        code: 200,
+        message: "Thẻ tag này đã tồn tại"
+      });
+      return;
+    }
   if (!tagName) {
     res.json({
       code: 400,

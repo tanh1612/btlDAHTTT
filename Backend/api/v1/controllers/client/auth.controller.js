@@ -9,10 +9,10 @@ module.exports.login = async (req, res) => {
     email,
     password,
   });
-  const role = await roleModel.findOne({
-    _id: user.role_id,
-  });
   if (user) {
+    const role = await roleModel.findOne({
+      _id: user.role_id,
+    });
     res.json({
       code: 200,
       message: "Đăng nhập thành công",
@@ -22,7 +22,7 @@ module.exports.login = async (req, res) => {
     return;
   }
 
-  res.json({
+  res.status(400).json({
     code: 200,
     message: "Tài khoản hoặc mật khẩu không đúng",
   });
@@ -35,7 +35,7 @@ module.exports.register = async (req, res) => {
         email
     });
     if(existEmail){
-        res.json({
+        res.status(400).json({
             code: 400,
             message: "Email đã tồn tại"
         });
