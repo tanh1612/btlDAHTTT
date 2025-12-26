@@ -20,6 +20,16 @@ module.exports.index = async (req, res) => {
 // thêm mới danh mục
 module.exports.create = async (req, res) => {
   const { category_name, description } = req.body;
+  const categoryExist = await categoryModel.findOne({
+    category_name
+  });
+  if(categoryExist){
+    res.status(400).json({
+      code: 200,
+      message: "Danh mục này đã tồn tại"
+    });
+    return;
+  }
   if (!category_name) {
     res.json({
       code: 200,

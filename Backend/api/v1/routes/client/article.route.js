@@ -10,7 +10,7 @@ router.get("/:article_id",controller.idArticle);
 router.get("/category/:category_id",controller.idCategory);
 
 router.post("/create",articleValidate.validate,controller.create);
-router.put("/:article_id",articleValidate.validate,controller.updateArticle);
+router.put("/update/:article_id",articleValidate.validate,controller.updateArticle);
 
 
 

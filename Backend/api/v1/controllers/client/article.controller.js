@@ -73,9 +73,9 @@ module.exports.create = async (req, res) => {
   });
 
   if (!user || !category) {
-    res.json({
-      code: 400,
-      message: "Tạo mới bài viết không thành công vì thông tin người dùng và danh mục chưa có",
+    res.status(400).json({
+      code: 200,
+      message: "Tạo mới bài viết không thành công vì thông tin người dùng hoặc danh mục chưa có",
     });
   } else {
     const newArticle = await articleModel({
