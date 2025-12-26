@@ -313,6 +313,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
+              flex-direction: row-reverse;
               gap: 20px;
               span{
                 background-color: black;
