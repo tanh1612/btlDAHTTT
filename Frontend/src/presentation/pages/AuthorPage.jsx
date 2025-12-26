@@ -6,7 +6,12 @@ import Img1 from "../../assets/articleDetail1.png";
 import Img2 from "../../assets/articleDetail2.png";
 import Img3 from "../../assets/articleDetail3.png";
 
+import ModalAddArticle from "../components/ModalAddArticle";
+import { useState } from "react";
+
 const AuthorPage = () => {
+  const [showAddArticle, setShowAddArticle] = useState(false);
+  
   const myArticles = [
     {
       id: 1,
@@ -58,7 +63,10 @@ const AuthorPage = () => {
         <div className="container">
             <div className="author-header d-flex justify-content-between align-items-center mb-5">
               <h2 className="mb-0 fw-bold text-dark">Bài viết của tôi</h2>
-              <button className="btn btn-primary d-flex align-items-center gap-2">
+              <button 
+                className="btn btn-primary d-flex align-items-center gap-2"
+                onClick={() => setShowAddArticle(true)}
+              >
                 <span>+</span> Thêm bài viết
               </button>
             </div>
@@ -94,6 +102,11 @@ const AuthorPage = () => {
             </div>
         </div>
       </div>
+      
+      <ModalAddArticle 
+        isShow={showAddArticle} 
+        handleClose={() => setShowAddArticle(false)} 
+      />
     </Layout>
   );
 };
